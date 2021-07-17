@@ -70,6 +70,8 @@ body.active{
   margin-left: 4px;
 }
 
+
+
 /* -------------------------------------------- */
 /* インナー */
 /* -------------------------------------------- */
@@ -91,8 +93,9 @@ body.active{
 /* セクション関連 */
 /* -------------------------------------------- */
 section{
-  padding: 40px 0;
   width: 100%;
+  margin-top: -75.5px;
+  padding: 115.5px 0;
 
   .section_heading{
     font-size: calc(1.5rem + ((1vw - 3.75px) * 0.9697));
@@ -112,7 +115,8 @@ section{
 
 @media (min-width: 600px) {
   section{
-    padding: 40px 0;
+    margin-top: -102px;
+    padding: 166px 0;
   
     .section_heading{
       margin-bottom: 48px;
@@ -122,7 +126,8 @@ section{
 
 @media (min-width: 1025px) {
   section{
-    padding: 80px 0;
+    margin-top: -107px;
+    padding: 187px 0; 
   
     .section_heading{
       font-size: rem(36);
@@ -182,6 +187,7 @@ section{
       font-size: rem(20);
       position: relative;
       letter-spacing: 0.25em;
+      font-weight: bold;
 
       /* 閉じるアイコン */
       .close_icon{
@@ -239,6 +245,7 @@ section{
     /* モーダル全体 */
     .nav_menu_wrapper{
       width: 80%;
+      max-width: 1000px;
       margin: 0 auto;
 
       /* ナビメニューの見出し */
@@ -331,7 +338,6 @@ header{
 
 @media (min-width: 600px) {
   header{
-    padding: 16px 0;
 
     .header_wrapper{
 
@@ -443,6 +449,9 @@ header{
 }
 
 @media (min-width: 600px) {
+  .mv{
+    height: 600px;
+  }
 
 }
 
@@ -450,7 +459,7 @@ header{
 
 @media (min-width: 1025px) {
   .mv{
-    height: 700px;
+    height: 800px;
   }
   
 }
@@ -513,7 +522,6 @@ footer{
       }
     }
   }
-
 }
 
 @media (min-width: 1025px) {
@@ -549,6 +557,7 @@ footer{
 /* works */
 /* -------------------------------------------- */
 .works{
+  background-color: $mainColor;
   .works_items{
     display: flex;
     flex-wrap: wrap;
@@ -763,6 +772,7 @@ footer{
 /* singleページ */
 /* -------------------------------------------- */
 .single{
+  background-color: $mainColor;
   margin-top: 80px;
 
   .single_wrapper{
@@ -823,6 +833,7 @@ footer{
       .pagonation_image{
         width: 80px;
         height: 100px;
+
         img{
           width: 100%;
           height: 100%;
@@ -844,6 +855,7 @@ footer{
 
 @media (min-width: 600px) {
   .single{
+    margin-top: 120px;
 
     /* ページネーション */
     .pagination{
