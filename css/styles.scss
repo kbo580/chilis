@@ -37,8 +37,10 @@ $mainColor: #fef6e4;
 $accentColor: #C09669;
 
 body {
-  font-family:sans-serif;
+  font-family:"fot-tsukuardgothic-std";
   position: relative;
+  color: $textColor;
+  // line-height: ;
   font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
   display: flex;
   flex-direction: column;
@@ -98,10 +100,14 @@ section{
     display: inline-block;
     text-align: center;
     margin-bottom: 32px;
+    font-family: "quatro slab";
+    text-shadow: 10px 10px 4px #ddd;
+    font-weight: 700;
 
     .sub_title{
       font-size: calc(0.75rem + ((1vw - 3.75px) * 0.2424));
       display: block;
+      font-family: "fot-tsukuardgothic-std";
     }
   }
 }
@@ -161,7 +167,7 @@ section{
   right: 120%;
   // right: 0;
   z-index: 1;
-  transition: all .4s;
+  transition: all .6s;
   overflow-y: scroll;
 
   /* モーダル全体 */
@@ -813,7 +819,7 @@ footer{
       }
 
       .pagonation_image{
-        width: 100px;
+        width: 80px;
         height: 100px;
         img{
           width: 100%;

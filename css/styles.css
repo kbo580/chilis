@@ -29,8 +29,9 @@ img {
 /* 共通設定 */
 /* -------------------------------------------- */
 body {
-  font-family: sans-serif;
+  font-family: "fot-tsukuardgothic-std";
   position: relative;
+  color: #7C7C7C;
   font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
   display: -webkit-box;
   display: -ms-flexbox;
@@ -96,11 +97,15 @@ section .section_heading {
   display: inline-block;
   text-align: center;
   margin-bottom: 32px;
+  font-family: "quatro slab";
+  text-shadow: 10px 10px 4px #ddd;
+  font-weight: 700;
 }
 
 section .section_heading .sub_title {
   font-size: calc(0.75rem + ((1vw - 3.75px) * 0.2424));
   display: block;
+  font-family: "fot-tsukuardgothic-std";
 }
 
 @media (min-width: 600px) {
@@ -155,8 +160,8 @@ section .section_heading .sub_title {
   height: 100%;
   right: 120%;
   z-index: 1;
-  -webkit-transition: all .4s;
-  transition: all .4s;
+  -webkit-transition: all .6s;
+  transition: all .6s;
   overflow-y: scroll;
   /* モーダル全体 */
   /* ナビメニューにactiveクラスが着いた時 */
@@ -755,7 +760,7 @@ footer .copy_right {
 }
 
 .single .pagination .prev .pagonation_image, .single .pagination .next .pagonation_image {
-  width: 100px;
+  width: 80px;
   height: 100px;
 }
 
