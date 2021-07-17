@@ -29,10 +29,12 @@ img {
 /* 共通設定 */
 /* -------------------------------------------- */
 body {
-  font-family: "fot-tsukuardgothic-std";
   position: relative;
-  color: #7C7C7C;
+  color: #333;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
   font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -97,15 +99,12 @@ section .section_heading {
   display: inline-block;
   text-align: center;
   margin-bottom: 32px;
-  font-family: "quatro slab";
-  text-shadow: 10px 10px 4px #ddd;
-  font-weight: 700;
+  font-family: 'Archivo Black', sans-serif;
 }
 
 section .section_heading .sub_title {
   font-size: calc(0.75rem + ((1vw - 3.75px) * 0.2424));
   display: block;
-  font-family: "fot-tsukuardgothic-std";
 }
 
 @media (min-width: 600px) {
@@ -181,6 +180,7 @@ section .section_heading .sub_title {
   border-top: 1px solid transparent;
   font-size: 1.25rem;
   position: relative;
+  letter-spacing: 0.25em;
   /* 閉じるアイコン */
 }
 
@@ -205,6 +205,7 @@ section .section_heading .sub_title {
   padding: 24px;
   -webkit-transition: all .4s;
   transition: all .4s;
+  letter-spacing: 0.25em;
 }
 
 .nav_wrapper .nav_menu_wrapper .nav_menu li a:hover {

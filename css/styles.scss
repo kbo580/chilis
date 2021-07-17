@@ -32,16 +32,17 @@ img{
 }
 
 $subColor: #b3d3db;
-$textColor: #7C7C7C;
+$textColor: #333;
 $mainColor: #fef6e4;
 $accentColor: #C09669;
 
 body {
-  font-family:"fot-tsukuardgothic-std";
   position: relative;
   color: $textColor;
-  // line-height: ;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
   font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -100,14 +101,11 @@ section{
     display: inline-block;
     text-align: center;
     margin-bottom: 32px;
-    font-family: "quatro slab";
-    text-shadow: 10px 10px 4px #ddd;
-    font-weight: 700;
+    font-family: 'Archivo Black', sans-serif;
 
     .sub_title{
       font-size: calc(0.75rem + ((1vw - 3.75px) * 0.2424));
       display: block;
-      font-family: "fot-tsukuardgothic-std";
     }
   }
 }
@@ -129,6 +127,7 @@ section{
     .section_heading{
       font-size: rem(36);
       margin-bottom: 64px;
+
       .sub_title{
         font-size: rem(14);
       }
@@ -182,6 +181,7 @@ section{
       border-top: 1px solid transparent;
       font-size: rem(20);
       position: relative;
+      letter-spacing: 0.25em;
 
       /* 閉じるアイコン */
       .close_icon{
@@ -205,6 +205,7 @@ section{
           display: block;
           padding: 24px;
           transition: all .4s;
+          letter-spacing: 0.25em;
 
           &:hover{
             background-color: #fff;
@@ -217,6 +218,7 @@ section{
     /* twitterのリンク */
     .twitter_link{
       transition: all .4s;
+
       &:hover{
         opacity: .6;
       }
