@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.scss">
+  <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <title>main</title>
+</head>
+
+<body>
+  
+  <!--ヘッダー-->
+  <header>
+    <div class="inner">
+
+      <!-- header_wrapperここから -->
+      <div class="header_wrapper">
+
+        <!-- ヘッダーロゴここから -->
+        <h1 class="header_logo_wrapper">
+          <a href="#">
+            <img src="images/pc_logo_2.svg" alt="ヘッダーロゴ">
+          </a>
+        </h1>
+        <!-- ヘッダーロゴここかまで -->
+        
+        <!-- メニューアイコンここから -->
+        <div class="header_menu_logo" id="show">
+          <img src="images/header_logo.png" alt="メニューアイコン">
+        </div>
+        <!-- メニューアイコンここまで -->
+
+      </div>
+      <!-- header_wrapperここまで -->
+
+      <!-- nav_wrapperここから -->
+      <div class="nav_wrapper" id="nav_wrapper">
+
+        <!-- スクリーンここから -->
+        <div id="screen"></div>
+        <!-- スクリーンここまで -->
+
+        <!-- nav_menu_wrapperここから -->
+        <nav class="nav_menu_wrapper" id="nav_menu_wrapper">
+          
+          <p class="nav_menu_title">MENU
+            <span class="close_icon" id="close">
+              <img src="images/header_logo_close.png" alt="closeのロゴ">
+            </span>
+          </p>
+          
+          <!-- nav_menuここから -->
+          <ul class="nav_menu">
+            <li><a href="#works">WORKS<span class="border bottom"></span></a></li>
+            <li><a href="#about">ABOUT ME<span class="border bottom"></span></a></li>
+            <li><a href="gallery.html">GALLERY<span class="border bottom"></span></a></li>
+            <li><a href="#">BLOG<i class="fas fa-external-link-alt"></i><span class="border bottom"></span></a></li>
+          </ul>
+          <!-- nav_menuここまで -->
+
+          <a href="#" class="twitter_link"><i class="fab fa-twitter"></i>twitterアカウントはこちら<i class="fas fa-external-link-alt"></i></a>
+
+          <!-- <div class="close_icon" id="close">
+            <img src="images/header_logo_close.png" alt="closeのロゴ">
+          </div> -->
+
+        </nav>
+        <!-- nav_menu_wrapperここまで -->
+
+      </div>
+      <!-- nav_wrapperここまで -->
+
+    </div>
+    <!-- /inner -->
+
+  </header>
+  <!--ヘッダーここまで-->
+
+  <main>
+    <div class="mv">
+      <!--スライドショー用の写真を変える場合はこちら-->
+      <div class="main_img" style="background-image: url(images/mv_1.jpg)"></div>
+      <div class="main_img" style="background-image: url(images/mv_2.jpg)"></div>
+      <div class="main_img" style="background-image: url(images/mv_3.JPG)"></div>
+      <div class="main_img" style="background-image: url(images/mv_4.jpg)"></div>
+    </div>
+
+    <!--works-->
+    <section class="works" id="works">
+      <div class="inner">
+        <h2 class="section_heading">WORKS<span class="sub_title">製作物</span></h2>
+
+        <!-- works_itemsここから -->
+        <ul class="works_items">
+          <li class="work_thumbnail"><a href="single.html"><img src="images/works_1.jpg" alt="ダミー"></a></li>
+
+          <li class="work_thumbnail"><a href="#"><img src="images/works_2.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_3.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_4.jpeg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_5.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_6.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_7.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_8.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_9.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_10.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_11.jpg" alt="ダミー"></a></li>
+          <li class="work_thumbnail"><a href="#"><img src="images/works_12.jpg" alt="ダミー"></a></li>
+        </ul>
+        <!-- works_itemsここまで -->
+      
+      </div>
+      <!-- /inner -->
+
+    </section>
+    <!--worksここまで-->
+
+    <!--aboutここから-->
+    <section class="about" id="about">
+      <div class="inner">
+        <h2 class="section_heading">ABOUT ME<span class="sub_title">わたしについて</span></h2>
+
+        <!-- about_wrapperここから -->
+        <div class="about_wrapper">
+          
+          <!-- about_prof_wrapperここから -->
+          <div class="about_prof_wrapper">
+            
+            <!-- プロフィール画像ここから -->
+            <div class="about_img_wrapper">
+              <img src="images/profile-image.jpg" alt="プロフィール画像">
+            </div>
+            <!-- /プロフィール画像ここまで -->
+  
+            <!-- about_text_wrapperここから -->
+            <ul class="about_text_wrapper">
+              <li class="name">名前</li>
+  
+              <li class="intro">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
+  
+              <!-- sns_link_wrapperここから -->
+              <li class="sns_link_wrapper">
+                <p><a href="#"><i class="fab fa-twitter"></i>twitterアカウントはこちら<i class="fas fa-external-link-alt"></i></a></p>
+
+                <p class="blog"><a href="#" class="container"><img src="images/blog-icon.png" alt="ブログのアイコン"><span>ブログはこちら<i class="fas fa-external-link-alt"></i></span></a></p>
+              </li>
+              <!-- sns_link_wrapperここまで -->
+              
+            </ul>
+            <!-- about_text_wrapperここまで -->
+          </div>
+          <!-- about_prof_wrapperここまで -->
+          
+          <!-- twitter_wrapper(埋め込み)ここから -->
+          <div class="twitter_wrapper">
+            <a class="twitter-timeline"  data-lang="ja" data-height="500"  href="https://twitter.com/kbyt_papillon?ref_src=twsrc%5Etfw">Tweets by kbyt_papillon</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+          <!-- twitter_wrapperここまで -->
+
+        </div>
+        <!-- about_wrapperここまで -->
+
+      </div>
+      <!-- /inner -->
+    </section>
+    <!-- aboutここまで -->
+  </main>
+
+  <!--フッター-->
+  <footer>
+    <div class="footer_wrapper">
+      <div class="footer_logo_wrapper">
+        <img src="images/footer_logo.svg" alt="">
+      </div>
+      <p class="copy_right">&copy2021 Chili</p>
+    </div>
+
+    <!-- Topへ戻るボタンここから -->
+    <div class="to_top" id="to_top"><a href="#"><i class="fas fa-chevron-up"></i></a></div>
+    <!-- Topへ戻るボタンここまで -->
+  </footer>
+
+  <!--フッターここまで-->
+  <script src="js/main.js"> </script>
+</body>
+</html>
+

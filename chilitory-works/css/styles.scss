@@ -1,0 +1,914 @@
+@charset "UTF-8";
+*{
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------- */
+/* リセット */
+/* -------------------------------------------- */
+body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,figure,input,textarea {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  list-style: none;
+  outline:0;
+}
+
+a { 
+  color: inherit;
+  text-decoration: none;
+}
+
+img{
+  max-width:100%;
+  vertical-align: bottom;
+}
+
+/* -------------------------------------------- */
+/* 共通設定 */
+/* -------------------------------------------- */
+@function rem($px){
+  @return ($px/16) *1rem;
+}
+
+$subColor: #b3d3db;
+$textColor: #7C7C7C;
+$mainColor: #fef6e4;
+$accentColor: #C09669;
+
+body {
+  font-family:sans-serif;
+  position: relative;
+  font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* bodyにactiveクラスが着いた時 */
+body.active{
+  overflow-y: hidden;
+}
+
+@media (min-width: 600px){
+  body{
+    font-size: rem(16);
+  }
+}
+
+/* twitterアイコン */
+.fa-twitter{
+  color: #00acee;
+  margin-right: 4px;
+}
+
+/* 外部リンクのアイコン */
+.fa-external-link-alt{
+  margin-left: 4px;
+}
+
+/* -------------------------------------------- */
+/* インナー */
+/* -------------------------------------------- */
+.inner{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 3%;
+}
+
+@media (min-width: 600px){
+  .inner{
+    width: 100%;
+    padding: 0 60px;
+  }
+}
+
+/* -------------------------------------------- */
+/* セクション関連 */
+/* -------------------------------------------- */
+section{
+  padding: 40px 0;
+  width: 100%;
+
+  .section_heading{
+    font-size: calc(1.5rem + ((1vw - 3.75px) * 0.9697));
+    letter-spacing: 0.1em;
+    line-height: 1.25;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 32px;
+
+    .sub_title{
+      font-size: calc(0.75rem + ((1vw - 3.75px) * 0.2424));
+      display: block;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  section{
+    padding: 40px 0;
+  
+    .section_heading{
+      margin-bottom: 48px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  section{
+    padding: 80px 0;
+  
+    .section_heading{
+      font-size: rem(36);
+      margin-bottom: 64px;
+      .sub_title{
+        font-size: rem(14);
+      }
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* ナビメニュー関連 */
+/* -------------------------------------------- */
+/* スクリーン */
+#screen{
+  background-color: rgba(0,0,0,.7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+
+/* スクリーンにactiveクラスが着いた時 */
+#screen.active{
+  display:block;
+}
+
+/* ナビメニュー全体 */
+.nav_wrapper{
+  color: #fff;
+  background-color: rgba( 0, 0, 0, 0.8);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  right: 120%;
+  // right: 0;
+  z-index: 1;
+  transition: all .4s;
+  overflow-y: scroll;
+
+  /* モーダル全体 */
+  .nav_menu_wrapper{
+    width: 100%;
+    border: 1px solid #fc2;
+    text-align: center;
+    // position: relative;
+
+    /* ナビメニューの見出し */
+    .nav_menu_title{
+      padding: 24px 0;
+      border: 1px solid #fff;
+      border-top: 1px solid transparent;
+      font-size: rem(20);
+      position: relative;
+
+      .close_icon{
+        width: 120px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+    }
+
+    /* ナビメニュー */
+    .nav_menu{
+      margin-bottom: 32px;
+
+      li{
+        a{
+          border: 1px solid #fff;
+          border-top: 1px solid transparent;
+          display: block;
+          padding: 24px;
+          transition: all .4s;
+
+          &:hover{
+            background-color: #fff;
+            color: #000;
+          }
+        }
+      }
+    }
+
+    /* twitterのリンク */
+    .twitter_link{
+      transition: all .4s;
+      &:hover{
+        opacity: .6;
+      }
+    }
+
+    /* 閉じるアイコン */
+    // .close_icon{
+    //   border: 1px solid #fff;
+    //   width: 120px;
+    //   position: absolute;
+    //   // top: 50%;
+    //   right: 0;
+    //   cursor: pointer;
+    // }
+  }
+
+  /* ナビメニューにactiveクラスが着いた時 */
+  &.active{
+    right: 0;
+  }
+}
+
+@media (min-width: 600px) {
+  /* ナビメニュー */
+  .nav_wrapper{
+    width: 100%;
+
+    /* モーダル全体 */
+    .nav_menu_wrapper{
+      width: 95%;
+      margin: 0 auto;
+
+      /* ナビメニューの見出し */
+      .nav_menu_title{
+        padding: 24px 0;
+        font-size: rem(20);
+      }
+
+      /* ナビメニュー */
+      .nav_menu{
+        margin-bottom: 32px;
+
+        li{
+
+          a{
+            display: block;
+            padding: 24px;
+            transition: all .4s;
+          }
+        }
+      }
+    }
+
+    /* ナビメニューにactiveクラスが着いた時 */
+    &.active{
+      right: 0;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  
+}
+
+/* -------------------------------------------- */
+/* ヘッダー */
+/* -------------------------------------------- */
+header{
+  background-color: rgba(179, 211, 219, 0.8);
+  border-bottom: 5px solid $accentColor;
+  padding: 8px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  .header_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* ヘッダーロゴ */
+    .header_logo_wrapper{
+
+      img{
+        width: 150px;
+      }
+    }
+
+    /* ヘッダーメニューアイコン */
+    .header_menu_logo{
+      width: 120px;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  header{
+    padding: 16px 0;
+
+    .header_wrapper{
+
+      /* ヘッダーロゴ */
+      .header_logo_wrapper{
+        img{
+          width: 220px;
+        }
+      }
+
+      /* ヘッダーメニューアイコン */
+      .header_menu_logo{
+        width: 180px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  header{
+
+    .header_wrapper{
+
+      /* ヘッダーロゴ */
+      .header_logo_wrapper{
+        img{
+          width: 250px;
+        }
+      }
+
+      /* ヘッダーメニューアイコン */
+      .header_menu_logo{
+        width: 190px;
+      }
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* メインビジュアル */
+/* -------------------------------------------- */
+.mv{
+  height: 400px;
+  width: 100%;
+  position: relative;
+    .main_img{
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 1;
+      animation: anime 24s infinite ease-in;
+      opacity: 0;
+    }  
+}
+  
+.main_img:first-child {
+  background-position: 67%; 
+}
+
+.main_img:nth-of-type(2) {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+  background-position: 90% 10%; 
+}
+
+.main_img:nth-of-type(3) {
+  -webkit-animation-delay: 12s;
+  animation-delay: 12s; 
+  background-position: 64% 80%;
+}
+
+  .main_img:nth-of-type(4) {
+    -webkit-animation-delay: 18s;
+    animation-delay: 18s; 
+    background-position: 36% ;
+  }
+
+  // .main_img:nth-of-type(5) {
+  //   -webkit-animation-delay: 24s;
+  //   animation-delay: 24s; 
+// }
+
+  // .main_img:nth-of-type(6) {
+  //   -webkit-animation-delay: 30s;
+  //   animation-delay: 30s; 
+// }
+  
+/*animation keyframe*/
+@keyframes anime {
+  0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 1;
+    }
+    35% {
+      opacity: 0;
+    }
+    100% { 
+      opacity: 0 
+    }
+}
+
+@media (min-width: 600px) {
+
+}
+
+
+
+@media (min-width: 1025px) {
+  .mv{
+    height: 700px;
+  }
+  
+}
+
+/* -------------------------------------------- */
+/* フッター */
+/* -------------------------------------------- */
+footer{
+  background: $subColor;
+  border-top: 5px solid $accentColor;
+  text-align: center;
+  padding: 16px 0;
+  margin-top: auto;
+
+  /* フッターロゴ */
+  .footer_logo_wrapper{
+    img{
+      width: 120px;
+    }
+  }
+
+  .copy_right{
+    font-size: rem(12);
+  }
+}
+
+/* Topへ戻るボタン */
+.to_top{
+  display: none;;
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+  opacity: .7;
+
+  /* FontAwesome */
+  i{
+    font-size: rem(24);
+    color: #fff;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 600px) {
+  footer{
+    padding: 16px 0;
+  
+    /* フッターロゴ */
+    .footer_logo_wrapper{
+      img{
+        width: 150px;
+      }
+    }
+  }
+
+}
+
+
+
+@media (min-width: 1025px) {
+  footer{
+    padding: 24px 0;
+
+    /* フッターロゴ */
+  .footer_logo_wrapper{
+    margin-bottom: 8px;
+    img{
+      width: 180px;
+    }
+  }
+  
+    .copy_right{
+      font-size: rem(14);
+    }
+  }
+
+  /* Topへ戻るボタン */
+  .to_top{
+    width: 50px;
+    height: 50px;
+
+    /* FontAwesome */
+    i{
+      font-size: rem(32);
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* works */
+/* -------------------------------------------- */
+.works{
+  .works_items{
+    display: flex;
+    flex-wrap: wrap;
+
+    /* worksのサムネ */
+    .work_thumbnail{
+      width: calc(100% / 2 - 8px);
+      margin: 0 4px;
+      margin-bottom: 16px;
+      transition: all .4s;
+      // max-height: 250px;
+
+      a{
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &:hover{
+        transform: translateY(-4px);
+        box-shadow: 5px 10px 20px rgba(0,0,0,0.25);
+      }
+
+      &:last-child,
+      &:nth-last-child(2){
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+@media (min-width: 600px) {
+
+}
+
+
+
+@media (min-width: 1025px) {
+  .works{
+    .works_items{
+  
+      .work_thumbnail{
+        width: calc(100% / 4 - 8px);
+        margin-bottom: 16px;
+        
+      &:nth-last-child(3),
+      &:nth-last-child(4){
+        margin-bottom: 0;
+      }
+      }
+    }
+  }
+}
+/* -------------------------------------------- */
+/* about */
+/* -------------------------------------------- */
+.about{
+
+  .about_wrapper{
+
+    /* プロフィール */
+    .about_prof_wrapper{
+
+      /* プロフィール画像 */
+      .about_img_wrapper{
+        border: 3px solid $accentColor;
+        border-radius: 50px;
+        margin-bottom: 24px;
+  
+        img{
+          border-radius: 50px;
+        }
+      }
+
+      /* 自己紹介の欄 */
+      .about_text_wrapper{
+        margin-bottom: 24px;
+
+        li{
+          margin-bottom: 16px;
+        }
+
+        /* 名前 */
+        .name{
+          font-size: calc(1rem + ((1vw - 3.75px) * 0.9697));
+        }
+
+        /* snsの欄 */
+        .sns_link_wrapper{
+
+          p:first-child{
+            margin-bottom: 4px;
+          }
+
+          a{
+            transition: all .4s;
+          
+            &:hover{
+              opacity: 0.6;
+            }
+          }
+
+          .blog{
+            display: inline-block;
+
+            .container{
+              display: flex;
+              align-items: baseline;
+
+              img{
+                width: 14px;
+                height: 14px;
+                display: inline-block;
+                margin-right: 4px;
+              }
+            }
+
+            span{
+              display: block;
+            }
+          }
+        }
+      }
+    }
+
+    /* twitterの埋め込み */
+    .twitter_wrapper{
+      border: 1px solid rgba(0,0,0,0.25);
+      border-radius: 6px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .about{
+
+    .about_wrapper{
+      display: flex;
+      justify-content: space-between;
+
+      /* プロフィール */
+      .about_prof_wrapper{
+        width: 49%;
+
+        /* プロフィール画像 */
+        .about_img_wrapper{
+          margin-bottom: 32px;
+        }
+
+        /* 自己紹介の欄 */
+        .about_text_wrapper{
+
+          /* snsの欄 */
+          .sns_link_wrapper{
+
+            .blog{
+              .container{
+                img{
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+     /* twitterの埋め込み */
+    .twitter_wrapper{
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .about{
+
+    .about_wrapper{
+
+      /* プロフィール */
+      .about_prof_wrapper{
+
+        /* 自己紹介の欄 */
+        .about_text_wrapper{
+
+          /* 名前 */
+          .name{
+            font-size: rem(24);
+          }
+
+          /* snsの欄 */
+          .sns_link_wrapper{
+
+            .blog{
+
+              img{
+                width: 16px;
+                height: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* singleページ */
+/* -------------------------------------------- */
+.single{
+  margin-top: 80px;
+
+  .single_wrapper{
+
+    /* 画像の大枠 */
+    .single_thumbnail_wrapper{
+      display: flex;
+  
+      /* 画像 */ 
+      .single_thumbnail{
+        width: calc(100% / 2 - 8px);
+        margin: 0 4px;
+  
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  /* 文章の大枠 */
+  .content_wrapper{
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    padding: 1em 0;
+
+    .works_name,.chara_name{
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+  }
+
+  .pc_only{
+    display: none;
+  }
+
+  /* ページネーション */
+  .pagination{
+    margin-top: 32px;
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+    height: auto;
+    position: relative;
+    
+    .prev,.next{
+      position: absolute;
+      top: 0;
+      transition: all .4s;
+      // border: 1px solid #000;
+
+      &:hover{
+        opacity: .6;
+      }
+
+      .pagonation_image{
+        width: 100px;
+        height: 100px;
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    /* 前に戻る */
+    .prev{
+      left: 0;
+    }
+    
+    /* 前に戻る */
+    .next{
+      right: 0;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .single{
+
+    /* ページネーション */
+    .pagination{
+      margin-top: 64px;
+      margin-bottom: 80px;
+    }
+  }
+}
+
+
+
+@media (min-width: 1025px) {
+  .single{
+    
+    .single_wrapper{
+
+      .thumbnail_left{
+        position: relative;
+      }
+    }
+
+    .sp_only{
+      display: none;
+    }
+
+    .pc_only{
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding: 1em;
+
+      .explain{
+        height: 70px;
+        overflow-y: scroll;
+
+        /* スクロールの幅の設定 */
+        &::-webkit-scrollbar {
+          width: 5px;
+          height: 10px;
+          }
+          
+          /* スクロールの背景の設定 */
+          &::-webkit-scrollbar-track {
+          border-radius: 5px;
+          box-shadow: 0 0 4px #aaa inset;
+          }
+          
+          /* スクロールのつまみ部分の設定 */
+          &::-webkit-scrollbar-thumb {
+          border-radius: 5px;
+          background: #555;
+          }
+      }
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* ▼タブレット用デザインとして付け足すデザイン */
+/* -------------------------------------------- */
+@media (min-width: 600px) {
+
+}
+
+
+
+@media (min-width: 1025px) {
+  
+}
+/* -------------------------------------------- */
+/* ▼タブレット用デザインとして付け足すデザイン */
+/* -------------------------------------------- */
+@media (min-width: 600px) {
+ 
+}
+/* ------------------------------------ */
+/* ▼PC用デザインとして付け足すデザイン */
+/* ------------------------------------ */
+@media (min-width: 1025px) {
+  
+}
